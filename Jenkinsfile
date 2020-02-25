@@ -9,7 +9,6 @@ pipeline {
 
       }
       steps {
-        sh 'cp *.SchDoc /renderer/python-altium/'
         sh 'cd /renderer/python-altium && find *.SchDoc | xargs -I \'{}\' bash -c \'python altium.py {}.SchDoc > {}.svg\''
       }
     }
