@@ -7,4 +7,4 @@ RUN python3 -m pip install OleFileIO_PL
 WORKDIR /renderer
 USER root
 
-RUN git clone https://github.com/vadmium/python-altium.git
+RUN git clone https://github.com/vadmium/python-altium.git && cp -r python-altium/ /bin/
