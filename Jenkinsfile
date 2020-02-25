@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Render') {
       agent {
@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh 'find *.SchDoc | xargs -I \'{}\' bash -c \'cd /renderer/python-altium && python altium.py {}.SchDoc > {}.svg\''
+        sh 'find *.SchDoc | xargs -I \'{}\' bash -c \'python /renderer/python-altium/altium.py {}.SchDoc > {}.svg\''
       }
     }
 
