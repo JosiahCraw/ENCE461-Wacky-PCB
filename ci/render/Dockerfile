@@ -5,5 +5,6 @@ RUN apt-get install -y git
 RUN python3 -m pip install OleFileIO_PL
 
 WORKDIR /renderer
+USER root
 
 RUN git clone https://github.com/vadmium/python-altium.git
