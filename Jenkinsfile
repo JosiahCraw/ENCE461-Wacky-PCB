@@ -12,6 +12,7 @@ pipeline {
         sh 'cp -r /renderer/python-altium/* .'
         sh 'find *.SchDoc | xargs -I \'{}\' bash -c \'python altium.py {} > {}.svg\' || true '
         archiveArtifacts '*.svg'
+        stash includes: '*.svg', name: 'svg'
       }
     }
 
@@ -20,9 +21,9 @@ pipeline {
         docker {
           image 'jrbeverly/rsvg:baseimage'
         }
-
       }
       steps {
+        unstash 'svg'
         sh 'rsvg-convert -f pdf -o schematic.pdf *.svg'
         archiveArtifacts '*.pdf'
       }
