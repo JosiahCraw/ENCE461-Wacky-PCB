@@ -18,7 +18,7 @@ pipeline {
     stage('Build') {
       agent {
         docker {
-          image 'jrbeverly/rsvg'
+          image 'jrbeverly/rsvg:baseimage'
         }
 
       }
