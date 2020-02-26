@@ -14,13 +14,20 @@ pipeline {
         archiveArtifacts '*.svg'
       }
     }
+
     stage('Build') {
-        agent any
-        steps {
-            sh 'rsvg-convert -f pdf -o schematic.pdf *.svg'
-            archiveArtifacts '*.pdf'
+      agent {
+        docker {
+          image 'jrbeverly/rsvg'
         }
+
+      }
+      steps {
+        sh 'rsvg-convert -f pdf -o schematic.pdf *.svg'
+        archiveArtifacts '*.pdf'
+      }
     }
+
     stage('Upload') {
       agent any
       steps {
