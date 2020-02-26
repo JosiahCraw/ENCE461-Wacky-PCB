@@ -12,12 +12,16 @@ pipeline {
         sh 'cp -r /renderer/python-altium/* .'
         sh 'find *.SchDoc | xargs -I \'{}\' bash -c \'python altium.py {} > {}.svg\' || true '
         archiveArtifacts '*.svg'
-        sh 'rsvg-convert -f pdf -o schematic.pdf *.svg'
-        archiveArtifacts '*.pdf'
       }
     }
     stage('Build') {
-
+        agent {
+            any
+        }
+        steps {
+            sh 'rsvg-convert -f pdf -o schematic.pdf *.svg'
+            archiveArtifacts '*.pdf'
+        }
     }
     stage('Upload') {
       agent any
