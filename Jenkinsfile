@@ -12,15 +12,16 @@ pipeline {
         sh 'cp -r /renderer/python-altium/* .'
         sh 'find *.SchDoc | xargs -I \'{}\' bash -c \'python altium.py {} > {}.svg\' || true '
         archiveArtifacts '*.svg'
-        stash includes: '*.svg', name: 'svg'
+        stash(includes: '*.svg', name: 'svg')
       }
     }
 
     stage('Build') {
       agent {
-        docker {
-          image 'jrbeverly/rsvg:baseimage'
+        dockerfile {
+          filename 'ci/build/Dockerfile'
         }
+
       }
       steps {
         unstash 'svg'
