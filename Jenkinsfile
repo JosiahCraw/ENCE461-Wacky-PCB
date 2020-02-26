@@ -14,6 +14,9 @@ pipeline {
         archiveArtifacts '*.svg'
       }
     }
+    stage('Build') {
+
+    }
     stage('Upload') {
     agent any
     steps {
