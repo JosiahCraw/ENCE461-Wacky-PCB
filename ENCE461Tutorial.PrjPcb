@@ -72,13 +72,13 @@ GenerateClassCluster=0
 DocumentUniqueId=TEYAOZTS
 
 [Document3]
-DocumentPath=Battery and Power.SchDoc
+DocumentPath=Battery_and_Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=0
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -89,7 +89,7 @@ GenerateClassCluster=0
 DocumentUniqueId=MCSKSWEJ
 
 [Document4]
-DocumentPath=Motor Drivers.SchDoc
+DocumentPath=Motor_Drivers.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
