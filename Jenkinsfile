@@ -15,9 +15,7 @@ pipeline {
       }
     }
     stage('Build') {
-        agent {
-            any
-        }
+        agent any
         steps {
             sh 'rsvg-convert -f pdf -o schematic.pdf *.svg'
             archiveArtifacts '*.pdf'
