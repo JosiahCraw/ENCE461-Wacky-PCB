@@ -156,6 +156,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SNNJIXHS
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Wacky_Racer\Design Rule Check - car_template 2020V3.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
