@@ -171,7 +171,11 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=HQNNYSUC
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for ENCE461Tutorial\Design Rule Check - hat_template 2020V3.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
